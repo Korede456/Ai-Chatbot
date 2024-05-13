@@ -14,7 +14,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions))
 
-const genAI = new GoogleGenerativeAI("AIzaSyB0zQgGm54XK_tCqi2z2vUxCuOHfFNq32E");
+const genAI = new GoogleGenerativeAI(API-KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 // Let's define an empty conversation history object
