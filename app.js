@@ -1,9 +1,7 @@
-import dotenv from "dotenv";
+import "dotenv/config"; // Assuming you have a .env file with PORT defined
 import express from "express";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import cors from "cors";
-
-dotenv.config(); // Assuming you have a .env file with PORT defined
 
 const app = express();
 app.use(express.json());
@@ -12,9 +10,9 @@ const port = process.env.PORT || 5000;
 const corsOptions = {
   origin: ["http://localhost:8081"],
 };
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
-const genAI = new GoogleGenerativeAI(API-KEY);
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 // Let's define an empty conversation history object
